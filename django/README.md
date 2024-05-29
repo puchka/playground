@@ -53,7 +53,7 @@ $ django-admin startproject mysite
 
 This will create a mysite directory in your current directory.
 
-```
+```sh
 $ tree mysite/
 mysite/
 ├── manage.py
@@ -88,8 +88,36 @@ Quit the server with CONTROL-C.
 
 ```
 
-Open the URL http://127.0.0.1:8000/ in a web broswer will show a page with a rocket taking off.
+Open the URL http://127.0.0.1:8000/ in a web browser will show a page with a rocket taking off.
 
 ## Reference
 
 - https://docs.djangoproject.com/en/5.0/intro/tutorial01/
+
+# Creating the Polls app
+
+```sh
+$ python manage.py startapp polls
+```
+
+```sh
+$ tree django/mysite/polls/
+django/mysite/polls/
+├── admin.py
+├── apps.py
+├── __init__.py
+├── migrations
+│   └── __init__.py
+├── models.py
+├── tests.py
+└── views.py
+
+1 directory, 7 files
+```
+
+After wiring index view into URLConf you can check the result in the
+browser at the URL: http://localhost:8000/polls/ after running:
+
+```sh
+$ python manage.py runserver
+```
