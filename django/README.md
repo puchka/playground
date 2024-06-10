@@ -121,3 +121,41 @@ browser at the URL: http://localhost:8000/polls/ after running:
 ```sh
 $ python manage.py runserver
 ```
+
+# Tutorial 2: Writing your first Django app, part 2
+
+## Database setup
+
+Install `sqlite3`, a command-line interface for SQLite 3.
+
+```sh
+sudo apt install sqlite3
+```
+
+```sh
+sqlite3 mysite/db.sqlite3
+```
+
+and
+
+```sh
+sqlite> .tables
+```
+
+to list the tables.
+
+e.g
+
+```
+auth_group                  auth_user_user_permissions
+auth_group_permissions      django_admin_log          
+auth_permission             django_content_type       
+auth_user                   django_migrations         
+auth_user_groups            django_session
+```
+
+To run the migrations related the `INSTALLED_APPS` in `mysite/settings.py`
+
+```sh
+$ python manage.py migrate
+```
